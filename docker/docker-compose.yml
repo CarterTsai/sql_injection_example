@@ -1,0 +1,22 @@
+db:
+    image: postgres:9.5.1
+    environment:
+        - POSTGRES_USER=admin
+        - POSTGRES_PASSWORD=testtest
+        - POSTGRES_DB=mrbs
+    ports:
+        - "5432:5432"
+    restart: always
+mrbs:
+    image: cartertsai/debain-mrbs
+    ports:
+        - "8888:80"
+        - "2200:22"
+    environment:
+        - MRBS_DB_NAME=mrbs
+        - MRBS_DB_USER=admin
+        - MRBS_DB_PASSWORD=testtest
+        - MRBS_DB_PREFIX=mrbs_
+    links:
+        - db
+    restart: always
