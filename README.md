@@ -7,8 +7,8 @@
 ### RUN PostgresSql
 
 ```
-$> cd docker
-$> docker-compose up -d
+    $> cd docker
+    $> docker-compose up -d
 ```
 
 ```
@@ -22,3 +22,10 @@ $> docker run -it --link test_db --net bridge --rm cartertsai/postgres:9.5.1 sh 
 ```
 
 P.S. d66 is container id
+
+### Run Server
+
+```
+    $> cd app
+    $> npm start
+```
