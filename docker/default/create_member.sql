@@ -12,3 +12,7 @@ CREATE TABLE "member" (
     NAME           TEXT    NOT NULL,
     PASSWORD       TEXT    NOT NULL
 );
+
+INSERT INTO member ("id", "name", "password") VALUES ('1','test1', 'abcd1234');
+INSERT INTO member ("id", "name", "password") VALUES ('2','test2', '1234abcd');
+INSERT INTO member ("id", "name", "password") VALUES ('3','test3', '9999AAAA');
