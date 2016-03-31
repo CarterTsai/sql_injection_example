@@ -39,7 +39,14 @@ router.get('/', function(req, res, next) {
     try {
         orm.initialize(config, function(err, models) {
             if (err) throw err;
-            console.log(models);
+
+            var member =  models.collections.member;
+            console.log(member);
+            member.query("select * from member",
+            function(err, result) {
+                console.log(err);
+                console.log(result.rows[0]);
+            });
         });
     } catch (e) {
         console.log(e);
