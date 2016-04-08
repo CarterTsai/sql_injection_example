@@ -12,7 +12,7 @@ var config = {
         postgresql: {
             adapter: 'postgre',
             database: 'test',
-            host: '127.0.0.1',
+            host: '192.168.99.100',
             user: 'postgres',
             password: '',
             port: 5432,
@@ -25,16 +25,34 @@ var config = {
 var Member = Waterline.Collection.extend({
     identity: 'member',
     connection: 'postgresql',
-    // attributes: {
-    //    name: 'text',
-    //    password: 'text'
-    // }
+    autoCreatedAt: false,
+    autoUpdatedAt: false,
+    migrate: 'safe',
+    attributes: {
+        id: {
+            type: 'text',
+            primaryKey: true,
+            unique: true,
+        },
+        name: {
+            type: 'text'
+        },
+        password: {
+            type: 'text'
+        },
+        createdat: {
+            type: 'datetime'
+        },
+        updatedat: {
+            type: 'datetime'
+        }
+    }
 });
 
 orm.loadCollection(Member);
 
 DBInit.Init = function(app) {
-    // Start Waterline passing adapters in
+    //Start Waterline passing adapters in
     try {
         orm.initialize(config, function(err, models) {
             if (err) throw err;

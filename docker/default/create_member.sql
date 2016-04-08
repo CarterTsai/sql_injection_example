@@ -7,12 +7,16 @@ CREATE DATABASE "test"
 
 \connect test
 
-CREATE TABLE "member" (
+CREATE TABLE "memberx" (
     ID INT PRIMARY KEY     NOT NULL,
     NAME           TEXT    NOT NULL,
-    PASSWORD       TEXT    NOT NULL
+    PASSWORD       TEXT    NOT NULL,
+    createAt       timestamp NOT NULL,
+    updateAt       timestamp NOT NULL
 );
 
-INSERT INTO member ("id", "name", "password") VALUES ('1','test1', 'abcd1234');
-INSERT INTO member ("id", "name", "password") VALUES ('2','test2', '1234abcd');
-INSERT INTO member ("id", "name", "password") VALUES ('3','test3', '9999AAAA');
+
+
+INSERT INTO memberx ("id", "name", "password", "createat", "updateat") VALUES ('1','test1', 'abcd1234', '2015/01/01', '2015/01/01');
+INSERT INTO memberx ("id", "name", "password", "createat", "updateat") VALUES ('2','test2', '1234abcd', '2015/01/01', '2015/01/01');
+INSERT INTO memberx ("id", "name", "password", "createat", "updateat") VALUES ('3','test3', '9999AAAA', '2015/01/01', '2015/01/01');
