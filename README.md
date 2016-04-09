@@ -29,3 +29,10 @@ P.S. d66 is container id
     $> cd app
     $> npm start
 ```
+
+### RUN Sqlmap
+
+```
+    $> cd sql_injection_tool
+    $> python sqlmap.py --wizard
+```
